@@ -23,21 +23,9 @@ document.onkeyup = function(event)
 
 	//Store the input from the user 
 	letterGuessed = event.key;
-	console.log(letterGuessed);
+	lookForTheLetter(letterGuessed);
 
-	//loop to see if the letter enter by the user is in the random word
-	for (i=0; i < randomWord.length; i++)
-	{
-		if(letterGuessed === randomWord.charAt(i))
-		{
-			document.getElementById("letters").innerHTML = letterGuessed;
-
-		}
-		else
-		{
-			
-		}
-	}
+	
 };
 
 
@@ -48,7 +36,7 @@ document.onkeyup = function(event)
 //																		   //
 /////////////////////////////////////////////////////////////////////////////
 
-//For loop to create blank spaces
+//Function to create blank spaces
 function createSpaces(randomWord)
 {
 	for (i= 0; i < randomWord.length; i++)
@@ -58,3 +46,23 @@ function createSpaces(randomWord)
 		document.getElementById("currentWord").appendChild(newLine);	
 	}
 }	
+
+//Function to see if the letter enter by the user is in the random word or not 
+function lookForTheLetter(letterGuessed)
+{
+	for (i=0; i < randomWord.length; i++)
+	{
+		if(letterGuessed === randomWord.charAt(i))
+		{
+			console.log(letterGuessed);
+			newElement = document.createElement("div");
+			var newLetter = document.createTextNode(letterGuessed);
+			document.getElementById("letters").appendChild(newLetter);
+
+		}
+		else
+		{
+			console.log(letterGuessed);
+		}
+	}
+}
