@@ -44,6 +44,7 @@ function createSpaces(randomWord)
 		var newElement = document.createElement("div");
 		var newLine = document.createTextNode("_ ");
 		document.getElementById("currentWord").appendChild(newLine);	
+		console.log(newLine);
 	}
 }	
 
@@ -55,9 +56,8 @@ function lookForTheLetter(letterGuessed)
 		if(letterGuessed === randomWord.charAt(i))
 		{
 			console.log(letterGuessed);
-			newElement = document.createElement("div");
-			var newLetter = document.createTextNode(letterGuessed);
-			document.getElementById("letters").appendChild(newLetter);
+			newLine = document.createTextNode(randomWord.charAt(i));
+			document.getElementById("currentWord").appendChild(newLine);
 
 		}
 		else
@@ -65,4 +65,13 @@ function lookForTheLetter(letterGuessed)
 			console.log(letterGuessed);
 		}
 	}
+	printLetter(letterGuessed);
+}
+
+// function to orint the letter
+function printLetter(letter)
+{
+		newElement = document.createElement("div");
+		var newLetter = document.createTextNode(letterGuessed);
+		document.getElementById("letters").appendChild(newLetter);	
 }
