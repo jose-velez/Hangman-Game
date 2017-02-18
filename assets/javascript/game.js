@@ -14,15 +14,7 @@ var guessedRemaining = 4;										// Guesses remaining to the user
 //Pick a Random Word from the array 
 randomWord = wordBank[ Math.floor(Math.random() * wordBank.length)];
 console.log(randomWord);
-//For loop to create blank spaces
-for (i= 0; i < randomWord.length; i++)
-{
-	var targetDiv = document.getElementById("#currentWord")
-	var newElement = document.createElement("div");
-	newElement.innerHTML = "hello";
-	targetDiv.appendChild(newElement);
-
-}
+createSpaces(randomWord);
 
 
 
@@ -47,3 +39,22 @@ document.onkeyup = function(event)
 		}
 	}
 };
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//																		   //
+//							All Functions								   //
+//																		   //
+/////////////////////////////////////////////////////////////////////////////
+
+//For loop to create blank spaces
+function createSpaces(randomWord)
+{
+	for (i= 0; i < randomWord.length; i++)
+	{
+		var newElement = document.createElement("div");
+		var newLine = document.createTextNode("_ ");
+		document.getElementById("currentWord").appendChild(newLine);	
+	}
+}	
