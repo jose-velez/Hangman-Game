@@ -1,0 +1,33 @@
+.container
+{
+	width: 960px;
+	margin: auto;
+}
+
+.title
+{
+	width: 860px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border: 2px solid black;
+	text-align: center;
+
+}
+
+/*Image column*/
+.leftColumn
+{
+	width: 380px;
+	border: 2px solid black;
+	float: left;
+	margin-left: 100px;
+}
+
+/*Content column*/
+.rightColumn
+{
+	width: 380px;
+	border: 2px solid black;
+	float: left;
+
+}
